@@ -1,0 +1,149 @@
+fileFormatVersion: 2
+guid: 247c49c62cf41a848a8672e6924798d2
+timeCreated: 1517087469
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: BandBox
+    100002: Beam01
+    100004: Beam02
+    100006: //RootNode
+    100008: Nut01
+    100010: Nut02
+    100012: Nut03
+    100014: Nut04
+    100016: PanelBack
+    100018: Screen
+    100020: ScreenCap
+    100022: Speaker_Band001
+    100024: SpeakerCover
+    100026: Object001
+    400000: BandBox
+    400002: Beam01
+    400004: Beam02
+    400006: //RootNode
+    400008: Nut01
+    400010: Nut02
+    400012: Nut03
+    400014: Nut04
+    400016: PanelBack
+    400018: Screen
+    400020: ScreenCap
+    400022: Speaker_Band001
+    400024: SpeakerCover
+    400026: Object001
+    2300000: BandBox
+    2300002: Beam01
+    2300004: Beam02
+    2300006: Nut01
+    2300008: Nut02
+    2300010: Nut03
+    2300012: Nut04
+    2300014: PanelBack
+    2300016: Screen
+    2300018: ScreenCap
+    2300020: Speaker_Band001
+    2300022: SpeakerCover
+    2300024: Object001
+    3300000: BandBox
+    3300002: Beam01
+    3300004: Beam02
+    3300006: Nut01
+    3300008: Nut02
+    3300010: Nut03
+    3300012: Nut04
+    3300014: PanelBack
+    3300016: Screen
+    3300018: ScreenCap
+    3300020: Speaker_Band001
+    3300022: SpeakerCover
+    3300024: Object001
+    4300000: Screen
+    4300002: ScreenCap
+    4300004: PanelBack
+    4300006: Nut01
+    4300008: Nut02
+    4300010: Nut03
+    4300012: Nut04
+    4300014: SpeakerCover
+    4300016: Beam01
+    4300018: Beam02
+    4300020: Speaker_Band001
+    4300022: BandBox
+    4300024: Object001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
