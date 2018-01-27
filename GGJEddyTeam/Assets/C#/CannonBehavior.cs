@@ -8,7 +8,7 @@ public class CannonBehavior : MonoBehaviour {
     GameObject Earth;
 
     [SerializeField]
-    float DistanceFromCore;
+    float PenetrationInEarth;
 
     [SerializeField]
     float RotateSpeed;
@@ -16,38 +16,47 @@ public class CannonBehavior : MonoBehaviour {
     [SerializeField]
     float RayLength;
 
+    [SerializeField]
+    float angleTolerance;
+
     LineRenderer lineRenderer;
+    LineRenderer EarthLineRenderer;
 
     float targetAngle;
+    float currentAngle = 0;
 
     // Use this for initialization
     void Start ()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        transform.position = Earth.transform.position + new Vector3(Earth.transform.localScale.x /2f + transform.localScale.x / 2f, 0, 0);
+        EarthLineRenderer = Earth.GetComponent<LineRenderer>();
+        transform.position = Earth.transform.position + new Vector3(Earth.transform.localScale.x /2f - PenetrationInEarth + transform.localScale.x / 2f, 0, 0);
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if(Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1))
         {
-            Debug.DrawLine(Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane)), Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane)) + new Vector3(0, 0, 1));
-
             Vector3 mouseInWorld = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
             mouseInWorld.z = Earth.transform.position.z;
 
-            targetAngle = Vector3.SignedAngle(Earth.transform.position + new Vector3(1,0,0), Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane)), new Vector3(0,1));
-            Debug.Log("Target Angle " + targetAngle);
-            Debug.Log("Point " + Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            targetAngle = Mathf.Acos(Vector3.Dot(mouseInWorld - Earth.transform.position, new Vector3(1, 0, 0)) / ((mouseInWorld - Earth.transform.position).magnitude * new Vector3(1, 0, 0).magnitude)) * 180f / Mathf.PI;
+
+            Vector3[] earthlinePoints = new Vector3[2];
+            earthlinePoints[0] = Earth.transform.position;
+            earthlinePoints[1] = (mouseInWorld - Earth.transform.position) * 50;
+            EarthLineRenderer.SetPositions(earthlinePoints);
         }
-        if (Input.GetAxis("Horizontal") > 0)
+        if (currentAngle < targetAngle - angleTolerance)
         {
             transform.RotateAround(Earth.transform.position, new Vector3(0, 0, 1), RotateSpeed * Time.deltaTime);
+            currentAngle += RotateSpeed * Time.deltaTime;
         }
-        else if(Input.GetAxis("Horizontal") < 0)
+        else if(currentAngle > targetAngle + angleTolerance)
         {
             transform.RotateAround(Earth.transform.position, new Vector3(0, 0, 1), -RotateSpeed * Time.deltaTime);
+            currentAngle -= RotateSpeed * Time.deltaTime;
         }
         Vector3[] points = new Vector3[2];
         points[0] = transform.position;
