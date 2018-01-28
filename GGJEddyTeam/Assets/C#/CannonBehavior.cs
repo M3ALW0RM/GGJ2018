@@ -39,7 +39,6 @@ public class CannonBehavior : MonoBehaviour {
     void Start ()
     {
         minMouseX = panel.GetComponent<RectTransform>().rect.width * UICanvas.scaleFactor;
-        Debug.Log(minMouseX);
         lineRenderer = GetComponent<LineRenderer>();
         EarthLineRenderer = Earth.GetComponent<LineRenderer>();
         transform.position = Earth.transform.position + new Vector3(Earth.transform.localScale.x /2f - PenetrationInEarth + transform.localScale.x / 2f, 0, 0);
@@ -65,7 +64,7 @@ public class CannonBehavior : MonoBehaviour {
         if (currentAngle < targetAngle - angleTolerance)
         {
             transform.RotateAround(Earth.transform.position, new Vector3(0, 0, 1), RotateSpeed * (1-currentAngle/targetAngle) * Time.deltaTime);
-            currentAngle += RotateSpeed *(1 - currentAngle / targetAngle)* Time.deltaTime;
+            currentAngle += RotateSpeed *(1 - currentAngle / targetAngle) * Time.deltaTime;
         }
         else if(currentAngle > targetAngle + angleTolerance)
         {
