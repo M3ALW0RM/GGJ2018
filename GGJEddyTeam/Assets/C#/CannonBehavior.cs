@@ -33,8 +33,10 @@ public class CannonBehavior : MonoBehaviour {
     [SerializeField]
     float EarthLazerLength;
 
+    public AudioSource CanonAudioSource;
+
     //[SerializeField]
-   // GameObject panel;
+    // GameObject panel;
     //[SerializeField]
     //Canvas UICanvas;
     [SerializeField]
@@ -60,6 +62,7 @@ public class CannonBehavior : MonoBehaviour {
         GameObject message = Instantiate(messagePrefab, transform.position, Quaternion.identity) as GameObject;
         message.transform.rotation = transform.rotation;
         message.GetComponent<MessageBehaviour>().answer = answer;
+        CanonAudioSource.Play();
     }
 
     public void MoveCannon()
