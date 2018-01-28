@@ -28,6 +28,9 @@ public class CannonBehavior : MonoBehaviour {
     float lefthandBorder;
 
     [SerializeField]
+    GameObject messagePrefab;
+
+    [SerializeField]
     float EarthLazerLength;
 
     //[SerializeField]
@@ -52,6 +55,13 @@ public class CannonBehavior : MonoBehaviour {
         EarthLineRenderer = Earth.GetComponent<LineRenderer>();
 	}
 	
+    public void FireCannon(AlertAnswer answer)
+    {
+        GameObject message = Instantiate(messagePrefab, transform.position, Quaternion.identity) as GameObject;
+        message.transform.rotation = transform.rotation;
+        message.GetComponent<MessageBehaviour>().answer = answer;
+    }
+
     public void MoveCannon()
     {
         Vector3 mousePos = Input.mousePosition;
@@ -94,5 +104,9 @@ public class CannonBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if(Input.GetMouseButton(1))
+        {
+            FireCannon(new AlertAnswer("test", SITUATION_ENDING.NONE, new AlertResponseToAnswer("Ya personne du nom de babord.", BACKGROUND.NORMAL_SHIP, CREW_EMOTION.PUZZLED)));
+        }
     }
 }
