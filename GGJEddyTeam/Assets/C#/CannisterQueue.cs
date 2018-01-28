@@ -17,7 +17,11 @@ public class CannisterQueue : MonoBehaviour {
         float canPosition = 0.6f;
         if(cannisterList.Count > 0)
         {
-            canPosition = Mathf.Min( 0.6f - animOffset, cannisterList[cannisterList.Count-1].slidePos - animOffset );
+            Cannister previousCan = cannisterList[cannisterList.Count-1];
+            float slidePos = previousCan.slidePos - animOffset;
+            if (previousCan.goingDown > 0)
+                slidePos = previousCan.goingDownStart + animOffset * previousCan.goingDown - animOffset;
+            canPosition = Mathf.Min( 0.6f - animOffset, slidePos );
         }
         newCan.Initialize(message, canPosition );
         cannisterList.Add(newCan);
