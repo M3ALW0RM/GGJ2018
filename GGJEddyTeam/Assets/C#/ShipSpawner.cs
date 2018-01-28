@@ -11,10 +11,10 @@ public class ShipSpawner : MonoBehaviour {
     List<Transform> spawnPositions;
 
     [SerializeField]
-    GameObject target;
+    public GameObject target;
 
     [SerializeField]
-    float timeToImpact;
+    float timeToImpactMissile;
 
     [SerializeField]
     float timeBetweenShipSpawn;
@@ -24,18 +24,18 @@ public class ShipSpawner : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        currentTimerTime = 0;
+        currentTimerTime = timeBetweenShipSpawn;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
         currentTimerTime -= Time.deltaTime;
-		if(Input.GetMouseButton(1) && currentTimerTime<=0)
+		if(currentTimerTime<=0)
         {
             currentTimerTime = timeBetweenShipSpawn;
             GameObject go = Instantiate(ship, spawnPositions[Random.Range(0, spawnPositions.Count)].position, new Quaternion());
-            go.GetComponent<Ship>().timeToInpact = timeToImpact;
+            go.GetComponent<Ship>().timeToInpact = timeToImpactMissile;
             go.GetComponent<Ship>().Target = target;
         }
 	}

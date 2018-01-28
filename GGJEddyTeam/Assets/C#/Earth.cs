@@ -4,9 +4,21 @@ using UnityEngine;
 
 public class Earth : MonoBehaviour {
 
+    [SerializeField]
+    GameObject Missile;
+    [SerializeField]
+    ShipSpawner spawner;
+    [SerializeField]
+    GameObject missileTarget;
+
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+        GameObject mis = Instantiate(Missile, transform.position, new Quaternion());
+        //mis.transform.LookAt(missileTarget.transform);
+        spawner.target = mis;
+        mis.GetComponentInChildren<Missile>().missileTarget = missileTarget;
+        mis.transform.LookAt(missileTarget.transform);
 	}
 	
 	// Update is called once per frame

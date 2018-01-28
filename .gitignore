@@ -34,3 +34,5 @@ sysinfo.txt
 *.unitypackage
 /GGJEddyTeam/Library
 /GGJEddyTeam/Temp
+/GGJEddyTeam/.vs/GGJEddyTeam/v15/Server/sqlite3/storage.ide-shm
+/GGJEddyTeam/.vs/GGJEddyTeam/v15/Server/sqlite3/storage.ide-wal
