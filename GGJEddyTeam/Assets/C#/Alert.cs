@@ -100,12 +100,12 @@ public class Alert : MonoBehaviour
                 new AlertAnswer(
                     "Ayez confiance en vous !",
                     SITUATION_ENDING.NONE,
-                    new AlertResponseToAnswer("Ça y est, chef, on a confiance en nous. Et maintenant on fait quoi ?", BACKGROUND.NORMAL_SHIP, CREW_EMOTION.HAPPY))
+                    new AlertResponseToAnswer("Ça y est, chef, on a confiance en nous. Et maintenant on fait quoi ?", BACKGROUND.NORMAL_SHIP, CREW_EMOTION.HAPPY)),
                 new AlertAnswer(
                     "À babord toute!",
                     SITUATION_ENDING.NONE,
                     new AlertResponseToAnswer("Y’a personne du nom de 'Babord' dans l’équipage, chef !", BACKGROUND.NORMAL_SHIP, CREW_EMOTION.PUZZLED))
-            })
+            }),
 
         new AlertSituation(
             "Chef, une fuite de gaz a causé un incendie dans la salle de contrôle. Apparemment, ça fait ça souvent. Qu’est-ce qu’on fait ?",
@@ -129,7 +129,7 @@ public class Alert : MonoBehaviour
                     "Ça devrait s’éteindre tout seul, il n’y a pas d’oxygène dans l’espace !",
                     SITUATION_ENDING.EXPLOSION,
                     new AlertResponseToAnswer("Merci, chef, c’est rassurant ! Nous on pensait que l'oxygène dans le vaisseau pourrait exploser !", BACKGROUND.NORMAL_SHIP, CREW_EMOTION.HAPPY))
-            })
+            }),
 
 
         new AlertSituation(
@@ -158,7 +158,7 @@ public class Alert : MonoBehaviour
                     "D'accord, vous avez ma permission, mais juste pour cette fois.",
                     SITUATION_ENDING.EXPLOSION,
                     new AlertResponseToAnswer("Merci, chef ! On ne vous décevra pas !", BACKGROUND.NORMAL_SHIP, CREW_EMOTION.HAPPY))
-            })
+            }),
 
         new AlertSituation(
             "Chef, on a repéré un vaisseau allié en provenance de la Terre. Ils ont peut-être de l'équipement et du carburant pour nous",
@@ -186,7 +186,7 @@ public class Alert : MonoBehaviour
                     "Allez, contactez nos alliés et qu'ça saute !!",
                     SITUATION_ENDING.EXPLOSION,
                     new AlertResponseToAnswer("Journal de bord : Explosion détectée. Origine inconnue. Enquête en cours.", BACKGROUND.SAVED_MESSAGE, CREW_EMOTION.ABSENT))
-            })
+            }),
 
 
 
@@ -216,7 +216,7 @@ public class Alert : MonoBehaviour
                     "Feu !",
                     SITUATION_ENDING.EXPLOSION,
                     new AlertResponseToAnswer("C’est pas pour critiquer, chef, mais on voit pas vraiment comment ça pourrait aider ?", BACKGROUND.FIRE, CREW_EMOTION.PUZZLED))
-            })
+            }),
 
 
 
@@ -246,7 +246,7 @@ public class Alert : MonoBehaviour
                     "Je pense que ces météorites sont au moins aussi intelligents que vous !",
                     SITUATION_ENDING.NONE,
                     new AlertResponseToAnswer("Merci du compliment, chef !", BACKGROUND.RED_ALERT, CREW_EMOTION.HAPPY))
-            })
+            }),
 
 
 
