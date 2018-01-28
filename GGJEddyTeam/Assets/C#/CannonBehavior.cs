@@ -40,6 +40,9 @@ public class CannonBehavior : MonoBehaviour {
     [SerializeField]
     Camera screenCamera;
 
+    [SerializeField]
+    CannisterQueue queue;
+
     LineRenderer lineRenderer;
     LineRenderer EarthLineRenderer;
 
@@ -97,6 +100,14 @@ public class CannonBehavior : MonoBehaviour {
                 currentAngle -= RotateSpeed * (1 - targetAngle / currentAngle) * Time.deltaTime;
             }
             yield return null;
+        }
+    }
+
+    void ReceiveAlert(AlertSituation situation)
+    {
+        for(int i = 0; i < situation.answers.Length; ++i)
+        {
+            queue.AddCannister(situation.answers[i]);
         }
     }
 

@@ -37,7 +37,7 @@ public class CannisterQueue : MonoBehaviour {
     void Start ()
     {
         visibleCannisterList = new List<Cannister>();
-        for (int i = 0; i < 15; ++i)
+        for (int i = 0; i < 5; ++i)
         {
             AddCannister(new AlertAnswer(randomMessages[i], SITUATION_ENDING.EXPLOSION, new AlertResponseToAnswer()));
         }
