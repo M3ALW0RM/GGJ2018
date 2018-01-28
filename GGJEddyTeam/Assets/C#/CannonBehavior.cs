@@ -24,9 +24,18 @@ public class CannonBehavior : MonoBehaviour {
     float angleTolerance;
 
     [SerializeField]
+    //Ration of window width
+    float lefthandBorder;
+
+    [SerializeField]
+    float EarthLazerLength;
+
+    [SerializeField]
     GameObject panel;
     [SerializeField]
     Canvas UICanvas;
+    [SerializeField]
+    Camera screenCamera;
 
     LineRenderer lineRenderer;
     LineRenderer EarthLineRenderer;
@@ -38,7 +47,7 @@ public class CannonBehavior : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        minMouseX = panel.GetComponent<RectTransform>().rect.width * UICanvas.scaleFactor;
+        minMouseX = lefthandBorder*Screen.width;
         lineRenderer = GetComponent<LineRenderer>();
         EarthLineRenderer = Earth.GetComponent<LineRenderer>();
         transform.position = Earth.transform.position + new Vector3(Earth.transform.localScale.x /2f - PenetrationInEarth + transform.localScale.x / 2f, 0, 0);
@@ -50,15 +59,14 @@ public class CannonBehavior : MonoBehaviour {
         if (Input.GetMouseButton(0) && Input.mousePosition.x > minMouseX)
         {
             Vector3 mousePos = Input.mousePosition;
-            mousePos.z = Earth.transform.position.z - Camera.main.transform.position.z;
-            Vector3 mouseInWorld = Camera.main.ScreenToWorldPoint(mousePos);
-            Debug.DrawLine(mouseInWorld, mouseInWorld + new Vector3(0, 0, 1));
+            mousePos.z = Earth.transform.position.z - screenCamera.transform.position.z;
+            Vector3 mouseInWorld = screenCamera.ScreenToWorldPoint(mousePos);
 
             targetAngle = Mathf.Acos(Vector3.Dot(mouseInWorld - Earth.transform.position, new Vector3(1, 0, 0)) / ((mouseInWorld - Earth.transform.position).magnitude * new Vector3(1, 0, 0).magnitude)) * 180f / Mathf.PI;
 
             Vector3[] earthlinePoints = new Vector3[2];
             earthlinePoints[0] = Earth.transform.position;
-            earthlinePoints[1] = (mouseInWorld - Earth.transform.position) * 50;
+            earthlinePoints[1] = mouseInWorld + (mouseInWorld - Earth.transform.position).normalized*10;
             EarthLineRenderer.SetPositions(earthlinePoints);
         }
         if (currentAngle < targetAngle - angleTolerance)

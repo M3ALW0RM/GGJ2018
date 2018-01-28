@@ -465,6 +465,11 @@ Prefab:
       propertyPath: PenetrationInEarth
       value: -0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114023486401483990, guid: fb72245f9ada468499f24c3331f92617,
+        type: 2}
+      propertyPath: screenCamera
+      value: 
+      objectReference: {fileID: 1724600865}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb72245f9ada468499f24c3331f92617, type: 2}
   m_IsPrefabParent: 0
