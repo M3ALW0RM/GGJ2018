@@ -8,6 +8,8 @@ public class Cannister : MonoBehaviour {
     private string message;
     private Text caption;
     private Animator anim;
+    public int goingDown = 0;
+    public float goingDownStart;
 
     private Button button;
 
@@ -23,7 +25,7 @@ public class Cannister : MonoBehaviour {
         outOfRange = true;
         anim.SetBool("Eject", true);
         ejected = true;
-        Destroy(this.gameObject, 0.4f);
+        Destroy(this.gameObject, 0.2f);
     }
 
     public void SetCaption( string txt )
@@ -40,7 +42,10 @@ public class Cannister : MonoBehaviour {
     public void GoDown(float animOffset)
     {
         //slidePos += animOffset;
-        StartCoroutine(Interpolate(slidePos, slidePos+animOffset, 10f));
+        if(goingDown == 0) goingDownStart = slidePos;
+        else StopAllCoroutines();
+        goingDown += 1;
+        StartCoroutine(Interpolate(slidePos, goingDownStart + animOffset*goingDown, 30f));
     }
 
     IEnumerator Interpolate(float start, float end, float speed)
