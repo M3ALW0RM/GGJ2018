@@ -28,6 +28,9 @@ public class CannonBehavior : MonoBehaviour {
     float lefthandBorder;
 
     [SerializeField]
+    GameObject messagePrefab;
+
+    [SerializeField]
     float EarthLazerLength;
 
     //[SerializeField]
@@ -52,6 +55,12 @@ public class CannonBehavior : MonoBehaviour {
         EarthLineRenderer = Earth.GetComponent<LineRenderer>();
 	}
 	
+    public void FireCannon(AlertAnswer answer)
+    {
+        GameObject message = Instantiate(messagePrefab, transform.position, Quaternion.LookRotation(transform.forward));
+        message.GetComponent<MessageBehaviour>().answer = answer;
+    }
+
     public void MoveCannon()
     {
         Vector3 mousePos = Input.mousePosition;
