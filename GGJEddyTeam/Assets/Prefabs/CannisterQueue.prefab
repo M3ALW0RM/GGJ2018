@@ -53,3 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannisterPrefab: {fileID: 114487122988158742, guid: b133a7f278299f343b426a875283396a,
     type: 2}
+  cannon: {fileID: 0}

@@ -439,6 +439,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114281348041285092, guid: 035d531a85d37fc428217867657c0bab,
+        type: 2}
+      propertyPath: cannon
+      value: 
+      objectReference: {fileID: 2060799197}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 035d531a85d37fc428217867657c0bab, type: 2}
   m_IsPrefabParent: 0
@@ -2112,6 +2117,8 @@ MonoBehaviour:
   RayLength: 10
   angleTolerance: 0.5
   lefthandBorder: 0
+  messagePrefab: {fileID: 1587021771239320, guid: da725dd8ba0ee2a4a89bb25250c31906,
+    type: 2}
   EarthLazerLength: 30
   screenCamera: {fileID: 107146188}
 --- !u!23 &2060799198

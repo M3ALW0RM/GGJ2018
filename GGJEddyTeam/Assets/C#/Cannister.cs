@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Cannister : MonoBehaviour {
 
-    private string message;
+    public AlertAnswer message;
     private Text caption;
     private Animator anim;
     public int goingDown = 0;
@@ -33,9 +33,9 @@ public class Cannister : MonoBehaviour {
         caption.text = txt;
     }
 
-    public void Initialize( string s, float n )
+    public void Initialize( AlertAnswer a, float n )
     {
-        message = s;
+        message = a;
         slidePos = n;
     }
 
@@ -73,7 +73,7 @@ public class Cannister : MonoBehaviour {
         caption = GetComponentInChildren<Text>();
         anim = GetComponent<Animator>();
         button = GetComponentInChildren<Button>();
-        SetCaption(message);
+        SetCaption(message.text);
         anim.SetFloat("slidePos", slidePos);
 
 	}
