@@ -305,6 +305,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8649432e3a8fbd147a58d8e0898992e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goingDown: 0
+  goingDownStart: 0
   speed: 0.01
   sinSpeed: 100
   sinAmplitude: 1

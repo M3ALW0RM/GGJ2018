@@ -86,7 +86,7 @@ public class Alert : MonoBehaviour
             new AlertAnswer[]
             {
                 new AlertAnswer(
-                    "Contentez-vous de suive le protocole 2017.0.3f",
+                    "Contentez-vous de suivre le protocole 2017.0.3f",
                     SITUATION_ENDING.CUT,
                     new AlertResponseToAnswer("Ok, Chef! Hé ça marche, chef!", BACKGROUND.NORMAL_SHIP, CREW_EMOTION.HAPPY)),
                 new AlertAnswer(
@@ -143,7 +143,7 @@ public class Alert : MonoBehaviour
                     SITUATION_ENDING.CUT,
                     new AlertResponseToAnswer("D’accord, chef, on trouvera une meilleure utilisation pour l’uranium plus tard, c'est promis.", BACKGROUND.NORMAL_SHIP, CREW_EMOTION.DISAPPOINTED)),
                 new AlertAnswer(
-                    "Allez-y, mais manipulez le avec prudence.",
+                    "Allez-y, mais manipulez-le avec prudence.",
                     SITUATION_ENDING.EXPLOSION,
                     new AlertResponseToAnswer("Désolé chef, on a essayé mais Ted a bousculé Léo et fait tomber l'uranium dans la ventilation...", BACKGROUND.RED_ALERT, CREW_EMOTION.PANICKED)),
                 new AlertAnswer(
@@ -161,7 +161,7 @@ public class Alert : MonoBehaviour
             }),
 
         new AlertSituation(
-            "Chef, on a repéré un vaisseau allié en provenance de la Terre. Ils ont peut-être de l'équipement et du carburant pour nous",
+            "Chef, on a repéré un vaisseau allié en provenance de la Terre. Ils ont peut-être de l'équipement et du carburant pour nous.",
             BACKGROUND.NORMAL_SHIP,
             CREW_EMOTION.HAPPY,
             new AlertAnswer[]
@@ -191,7 +191,7 @@ public class Alert : MonoBehaviour
 
 
         new AlertSituation(
-            "Chef, un monstre alien s'est infiltré dans le vaisseau que devons nous faire pour règler la situation.",
+            "Chef, un monstre alien s'est infiltré dans le vaisseau, que devons nous faire pour règler la situation ?",
             BACKGROUND.MONSTER,
             CREW_EMOTION.PANICKED,
             new AlertAnswer[]
@@ -215,13 +215,13 @@ public class Alert : MonoBehaviour
                 new AlertAnswer(
                     "Feu !",
                     SITUATION_ENDING.EXPLOSION,
-                    new AlertResponseToAnswer("C’est pas pour critiquer, chef, mais on voit pas vraiment comment ça pourrait aider ?", BACKGROUND.FIRE, CREW_EMOTION.PUZZLED))
+                    new AlertResponseToAnswer("C’est pas pour critiquer, chef, mais on ne voit pas vraiment comment ça pourrait aider ?", BACKGROUND.FIRE, CREW_EMOTION.PUZZLED))
             }),
 
 
 
         new AlertSituation(
-            "Message : Chef, vous allez rire, on va traverser une zone de turbulences !",
+            "Chef, vous allez rire, on va traverser une zone de turbulences !",
             BACKGROUND.RED_ALERT,
             CREW_EMOTION.HAPPY,
             new AlertAnswer[]
@@ -243,7 +243,7 @@ public class Alert : MonoBehaviour
                     SITUATION_ENDING.NONE,
                     new AlertResponseToAnswer("Bah turbulence c’est un mot rigolo quand même.", BACKGROUND.RED_ALERT, CREW_EMOTION.DISAPPOINTED)),
                 new AlertAnswer(
-                    "Je pense que ces météorites sont au moins aussi intelligents que vous !",
+                    "Je pense que ces météorites sont au moins aussi intelligentes que vous !",
                     SITUATION_ENDING.NONE,
                     new AlertResponseToAnswer("Merci du compliment, chef !", BACKGROUND.RED_ALERT, CREW_EMOTION.HAPPY))
             }),
@@ -276,8 +276,147 @@ public class Alert : MonoBehaviour
                 new AlertAnswer(
                     "Faites semblant de ne pas l'avoir vu.",
                     SITUATION_ENDING.NONE,
-                    new AlertResponseToAnswer("Nous ne sommes pas programmmés pour agir de façon décontractée, chef !", BACKGROUND.RED_ALERT, CREW_EMOTION.DISAPPOINTED))
-            })
+                    new AlertResponseToAnswer("Nous ne sommes pas programmés pour agir de façon décontractée, chef !", BACKGROUND.RED_ALERT, CREW_EMOTION.DISAPPOINTED))
+            }),
+
+
+
+
+
+            new AlertSituation(
+            "Chef, on se dirige vers une pluie de météorites !",
+            BACKGROUND.RED_ALERT,
+            CREW_EMOTION.PANICKED,
+            new AlertAnswer[]
+            {
+                new AlertAnswer(
+                    "Activez les boucliers !",
+                    SITUATION_ENDING.CUT,
+                    new AlertResponseToAnswer("On a activé les boucliers, ça fonctionne, chef !", BACKGROUND.NORMAL_SHIP, CREW_EMOTION.HAPPY)),
+                new AlertAnswer(
+                    "Évitez de toucher les météorites !",
+                    SITUATION_ENDING.EXPLOSION,
+                    new AlertResponseToAnswer("On ne les touche pas, chef ; c'est elles qui nous touchent !", BACKGROUND.FIRE, CREW_EMOTION.PANICKED)),
+                new AlertAnswer(
+                    "Contournez les météorites ! Virez à tribord !",
+                    SITUATION_ENDING.NONE,
+                    new AlertResponseToAnswer("Chef, c'est quoi 'tribord' ?", BACKGROUND.RED_ALERT, CREW_EMOTION.PUZZLED)),
+                new AlertAnswer(
+                    "Restez loin des astéroïdes ; tenez vos positions !",
+                    SITUATION_ENDING.NONE,
+                    new AlertResponseToAnswer("D'accord, mais comment va-t-on piloter le vaisseau si on ne peut plus bouger ?", BACKGROUND.RED_ALERT, CREW_EMOTION.PUZZLED))
+            }),
+
+
+
+
+                        new AlertSituation(
+            "Chef, le moteur du vaisseau ne fonctionne plus !",
+            BACKGROUND.RED_ALERT,
+            CREW_EMOTION.PANICKED,
+            new AlertAnswer[]
+            {
+                new AlertAnswer(
+                    "Activez les moteurs de secours !",
+                    SITUATION_ENDING.CUT,
+                    new AlertResponseToAnswer("Vous êtes si intelligent, chef ! Ça fonctionne !", BACKGROUND.NORMAL_SHIP, CREW_EMOTION.HAPPY)),
+                new AlertAnswer(
+                    "Vérifiez les réserves d'uranium !",
+                    SITUATION_ENDING.EXPLOSION,
+                    new AlertResponseToAnswer("Il reste pleeeeeeein d'uranium, chef !", BACKGROUND.FIRE, CREW_EMOTION.ABSENT)),
+                new AlertAnswer(
+                    "Allumez les moteurs de secours !",
+                    SITUATION_ENDING.EXPLOSION,
+                    new AlertResponseToAnswer("Chef, on a mis le feu au moteur, on fait quoi maintenant ?", BACKGROUND.FIRE, CREW_EMOTION.HAPPY)),
+                new AlertAnswer(
+                    "Tapez dans les réserves d'énergie !",
+                    SITUATION_ENDING.EXPLOSION,
+                    new AlertResponseToAnswer("Les réserves d'énergie réagissent mal à nos coups, chef !", BACKGROUND.FIRE, CREW_EMOTION.PANICKED))
+            }),
+
+
+
+                                    new AlertSituation(
+            "Chef, un poulpe géant intergalactique s'approche de nous ! Vous pensez qu'il est amical ?",
+            BACKGROUND.RED_ALERT,
+            CREW_EMOTION.PUZZLED,
+            new AlertAnswer[]
+            {
+                new AlertAnswer(
+                    "Fuyez, pauvres fous !",
+                    SITUATION_ENDING.CUT,
+                    new AlertResponseToAnswer("Pleine vitesse, chef ! On a réussi à la semer !", BACKGROUND.NORMAL_SHIP, CREW_EMOTION.HAPPY)),
+                new AlertAnswer(
+                    "Le poulpe va dévorer le vaisseau !",
+                    SITUATION_ENDING.EXPLOSION,
+                    new AlertResponseToAnswer("Aucune chance, chef ! Le vaisseau n'est pas comestible.", BACKGROUND.MONSTER, CREW_EMOTION.HAPPY)),
+                new AlertAnswer(
+                    "Faites face au poulpe !",
+                    SITUATION_ENDING.EXPLOSION,
+                    new AlertResponseToAnswer("Ça y est chef, on est tournés vers le monstre !", BACKGROUND.RED_ALERT, CREW_EMOTION.HAPPY)),
+                new AlertAnswer(
+                    "Feu à volonté !",
+                    SITUATION_ENDING.EXPLOSION,
+                    new AlertResponseToAnswer("Ouais, du feu pour tout le monde !", BACKGROUND.FIRE, CREW_EMOTION.HAPPY))
+            }),
+
+
+
+                                                new AlertSituation(
+            "Chef, les batteries de l'équipage s'affaiblissent.",
+            BACKGROUND.NORMAL_SHIP,
+            CREW_EMOTION.DISAPPOINTED,
+            new AlertAnswer[]
+            {
+                new AlertAnswer(
+                    "Désossez Théo et récupérez son énergie.",
+                    SITUATION_ENDING.CUT,
+                    new AlertResponseToAnswer("C'est fait, chef ! Il n'a pas souffert ! Enfin, on pense...", BACKGROUND.NORMAL_SHIP, CREW_EMOTION.HAPPY)),
+                new AlertAnswer(
+                    "Passez en mode économie d'énergie",
+                    SITUATION_ENDING.EXPLOSION,
+                    new AlertResponseToAnswer("Journal de bord : vos robots se sont désactivés.", BACKGROUND.NORMAL_SHIP, CREW_EMOTION.DEAD)),
+                new AlertAnswer(
+                    "Réduisez votre consommation d'énergie.",
+                    SITUATION_ENDING.EXPLOSION,
+                    new AlertResponseToAnswer("Chef, on a désactivé tous les systèmes de survie !", BACKGROUND.NORMAL_SHIP, CREW_EMOTION.DEAD)),
+                new AlertAnswer(
+                    "Ajoutez de l'uranium dans vos batteries !",
+                    SITUATION_ENDING.EXPLOSION,
+                    new AlertResponseToAnswer("WOOHOO ! ÇA MARCHE, CHEF ! TOUTE CETTE ÉNERGIE ! INCROYABLE !", BACKGROUND.FIRE, CREW_EMOTION.HAPPY))
+            }),
+
+
+
+
+                                                            new AlertSituation(
+            "Chef ! Bertold est devenu fou ! Il nous attaque !",
+            BACKGROUND.RED_ALERT,
+            CREW_EMOTION.PANICKED,
+            new AlertAnswer[]
+            {
+                new AlertAnswer(
+                    "Neutralisez-le !",
+                    SITUATION_ENDING.CUT,
+                    new AlertResponseToAnswer("On a réussi, chef ! Il n'y a eu aucune victime ! (Enfin, à part Bertold...)", BACKGROUND.NORMAL_SHIP, CREW_EMOTION.HAPPY)),
+                new AlertAnswer(
+                    "Étouffez cette rébellion dans l'oeuf !",
+                    SITUATION_ENDING.NONE,
+                    new AlertResponseToAnswer("Chef, nous n'avons ni oeuf ni poule à bord du vaisseau !", BACKGROUND.RED_ALERT, CREW_EMOTION.DISAPPOINTED)),
+                new AlertAnswer(
+                    "Rétablissez l'ordre à bord du vaisseau.",
+                    SITUATION_ENDING.EXPLOSION,
+                    new AlertResponseToAnswer("On s'est tous replacés dans le bon ordre, chef, mais Bertold continue à nous attaquer !", BACKGROUND.FIRE, CREW_EMOTION.HAPPY)),
+                new AlertAnswer(
+                    "Isolez-le, on règlera ça plus tard !",
+                    SITUATION_ENDING.NONE,
+                    new AlertResponseToAnswer("Situation résolue, chef !  Bertold est seul à bord du vaisseau maintenant !", BACKGROUND.SPACE, CREW_EMOTION.HAPPY)),
+                new AlertAnswer(
+                    "Explosez-moi ce traître !",
+                    SITUATION_ENDING.NONE,
+                    new AlertResponseToAnswer("L'explosion d'un membre de l'équipage a entraîné la destruction du vaisseau. Bonne journée !", BACKGROUND.SAVED_MESSAGE, CREW_EMOTION.ABSENT))
+            }),
+
     };
 
     public int index;

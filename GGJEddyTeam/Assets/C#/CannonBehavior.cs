@@ -42,6 +42,9 @@ public class CannonBehavior : MonoBehaviour {
     [SerializeField]
     Camera screenCamera;
 
+    [SerializeField]
+    CannisterQueue queue;
+
     LineRenderer lineRenderer;
     LineRenderer EarthLineRenderer;
 
@@ -59,8 +62,7 @@ public class CannonBehavior : MonoBehaviour {
 	
     public void FireCannon(AlertAnswer answer)
     {
-        GameObject message = Instantiate(messagePrefab, transform.position, Quaternion.identity) as GameObject;
-        message.transform.rotation = transform.rotation;
+        GameObject message = Instantiate(messagePrefab, transform.position + -transform.right * 1.5f, Quaternion.LookRotation(transform.forward));
         message.GetComponent<MessageBehaviour>().answer = answer;
         CanonAudioSource.Play();
     }
@@ -104,12 +106,16 @@ public class CannonBehavior : MonoBehaviour {
         }
     }
 
+    void ReceiveAlert(AlertSituation situation)
+    {
+        for(int i = 0; i < situation.answers.Length; ++i)
+        {
+            queue.AddCannister(situation.answers[i]);
+        }
+    }
+
 	// Update is called once per frame
 	void Update ()
     {
-        if(Input.GetMouseButton(1))
-        {
-            FireCannon(new AlertAnswer("test", SITUATION_ENDING.NONE, new AlertResponseToAnswer("Ya personne du nom de babord.", BACKGROUND.NORMAL_SHIP, CREW_EMOTION.PUZZLED)));
-        }
     }
 }
