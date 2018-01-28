@@ -14,7 +14,7 @@ public class MessageBehaviour : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-		
+        Destroy(this, 9f);
 	}
 	
 	// Update is called once per frame

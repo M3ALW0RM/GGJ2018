@@ -51,8 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8e0445e1963cd4393f4d1080f02532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship: {fileID: 0}
-  spawnPositions: []
+  ship: {fileID: 1181135165598704, guid: e68faf3eb60c14247bd4c71900b89b5f, type: 2}
+  spawnPositions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   target: {fileID: 0}
-  timeToImpactMissile: 0
-  timeBetweenShipSpawn: 0
+  timeToImpactMissile: 30
+  timeBetweenShipSpawn: 3

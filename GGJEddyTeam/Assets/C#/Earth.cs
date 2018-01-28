@@ -14,11 +14,11 @@ public class Earth : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        GameObject mis = Instantiate(Missile, transform.position, new Quaternion());
-        //mis.transform.LookAt(missileTarget.transform);
-        spawner.target = mis;
-        mis.GetComponentInChildren<Missile>().missileTarget = missileTarget;
-        mis.transform.LookAt(missileTarget.transform);
+//        GameObject mis = Instantiate(Missile, transform.position, new Quaternion());
+//        //mis.transform.LookAt(missileTarget.transform);
+//        spawner.target = mis;
+//        mis.GetComponentInChildren<Missile>().missileTarget = missileTarget;
+//        mis.transform.LookAt(missileTarget.transform);
 	}
 	
 	// Update is called once per frame

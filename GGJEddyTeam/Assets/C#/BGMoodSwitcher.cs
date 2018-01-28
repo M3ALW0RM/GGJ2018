@@ -33,7 +33,7 @@ public class BGMoodSwitcher : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        SetBG(defaultBG);
-        SetEmotion(defaultMood);
+//        SetBG(defaultBG);
+//        SetEmotion(defaultMood);
 	}
 }
