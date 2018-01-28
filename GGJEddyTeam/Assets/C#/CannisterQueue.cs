@@ -9,11 +9,17 @@ public class CannisterQueue : MonoBehaviour {
 
     private List<Cannister> cannisterList;
 
+    private float animOffset = 0.05f; //value in animation "time" in between two cans = distance between cans
 
     public void AddCannister(string message)
     {
         Cannister newCan = Instantiate(cannisterPrefab, this.transform, true);
-        newCan.Initialize(message, cannisterList.Count);
+        float canPosition = 0.6f;
+        if(cannisterList.Count > 0)
+        {
+            canPosition = Mathf.Min( 0.6f - animOffset, cannisterList[cannisterList.Count-1].slidePos - animOffset );
+        }
+        newCan.Initialize(message, canPosition );
         cannisterList.Add(newCan);
     }
 
@@ -37,16 +43,23 @@ public class CannisterQueue : MonoBehaviour {
         for( int i = 0; i<canNum; i++)
         {
             Cannister can = cannisterList[i];
-            if( can.outOfRange )
+            if(can.ejected)
             {
                 for( int j = canNum-1; j>i; j--)
                 {
-                    cannisterList[j].GoDown();
+                    cannisterList[j].GoDown(animOffset);
                 }
                 ////////INSERT CODE FOR FIRING MESSAGE////////
                 cannisterList.Remove(can);
                 break;
             }
+            else if( can.outOfRange )
+            {
+                cannisterList.Remove(can);
+                can.Kill();
+                break;
+            }
+
         }
 	}
 }
