@@ -57,8 +57,7 @@ public class CannonBehavior : MonoBehaviour {
 	
     public void FireCannon(AlertAnswer answer)
     {
-        GameObject message = Instantiate(messagePrefab, transform.position, Quaternion.identity) as GameObject;
-        message.transform.rotation = transform.rotation;
+        GameObject message = Instantiate(messagePrefab, transform.position, Quaternion.LookRotation(transform.forward));
         message.GetComponent<MessageBehaviour>().answer = answer;
     }
 
@@ -104,9 +103,5 @@ public class CannonBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if(Input.GetMouseButton(1))
-        {
-            FireCannon(new AlertAnswer("test", SITUATION_ENDING.NONE, new AlertResponseToAnswer("Ya personne du nom de babord.", BACKGROUND.NORMAL_SHIP, CREW_EMOTION.PUZZLED)));
-        }
     }
 }
