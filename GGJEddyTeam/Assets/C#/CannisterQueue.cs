@@ -6,12 +6,14 @@ public class CannisterQueue : MonoBehaviour {
 
     [SerializeField]
     private Cannister cannisterPrefab;
+    [SerializeField]
+    private CannonBehavior cannon;
 
     private List<Cannister> cannisterList;
 
     private float animOffset = 0.05f; //value in animation "time" in between two cans = distance between cans
 
-    public void AddCannister(string message)
+    public void AddCannister(AlertAnswer message)
     {
         Cannister newCan = Instantiate(cannisterPrefab, this.transform, true);
         float canPosition = 0.6f;
@@ -39,7 +41,7 @@ public class CannisterQueue : MonoBehaviour {
         //DEV - REMOVE WHEN CODE IS IN TO ADD MESSAGES
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            AddCannister("test");
+            AddCannister(Alert.possibleAlertSituations[0].answers[0] );
         }
 
         int canNum = cannisterList.Count;
@@ -53,7 +55,9 @@ public class CannisterQueue : MonoBehaviour {
                 {
                     cannisterList[j].GoDown(animOffset);
                 }
-                ////////INSERT CODE FOR FIRING MESSAGE////////
+
+                cannon.FireCannon(can.message);
+
                 cannisterList.Remove(can);
                 break;
             }
