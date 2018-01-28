@@ -2112,6 +2112,8 @@ MonoBehaviour:
   RayLength: 10
   angleTolerance: 0.5
   lefthandBorder: 0
+  messagePrefab: {fileID: 1587021771239320, guid: da725dd8ba0ee2a4a89bb25250c31906,
+    type: 2}
   EarthLazerLength: 30
   screenCamera: {fileID: 107146188}
 --- !u!23 &2060799198
