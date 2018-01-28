@@ -22,6 +22,11 @@ public class Ship : MonoBehaviour {
 	void Update ()
     {
         elapsedTime += Time.deltaTime;
-        transform.position = Vector3.Lerp(startPoint, Target.transform.position, elapsedTime/timeToInpact);
+        transform.position = Vector3.Lerp(startPoint, Target.transform.GetChild(0).position, elapsedTime/timeToInpact);
+        if(elapsedTime >= timeToInpact)
+        {
+            Debug.Log("Collision with missile");
+            Destroy(this.gameObject);
+        }
 	}
 }
