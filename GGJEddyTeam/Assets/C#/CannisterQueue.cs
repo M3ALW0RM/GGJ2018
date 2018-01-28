@@ -9,7 +9,9 @@ public class CannisterQueue : MonoBehaviour {
     [SerializeField]
     private CannonBehavior cannon;
 
-    private List<Cannister> cannisterList;
+    private List<Cannister> visibleCannisterList;
+
+    private List<AlertAnswer> totalAlertList;
 
     private float animOffset = 0.05f; //value in animation "time" in between two cans = distance between cans
 
@@ -17,22 +19,28 @@ public class CannisterQueue : MonoBehaviour {
     {
         Cannister newCan = Instantiate(cannisterPrefab, this.transform, true);
         float canPosition = 0.6f;
-        if(cannisterList.Count > 0)
+        if(visibleCannisterList.Count > 0)
         {
-            Cannister previousCan = cannisterList[cannisterList.Count-1];
+            Cannister previousCan = visibleCannisterList[visibleCannisterList.Count-1];
             float slidePos = previousCan.slidePos - animOffset;
             if (previousCan.goingDown > 0)
                 slidePos = previousCan.goingDownStart + animOffset * previousCan.goingDown - animOffset;
             canPosition = Mathf.Min( 0.6f - animOffset, slidePos );
         }
         newCan.Initialize(message, canPosition );
-        cannisterList.Add(newCan);
+        visibleCannisterList.Add(newCan);
     }
 
-	// Use this for initialization
-	void Start ()
+    private string[] randomMessages = new string[]{"Revenez !", "Exécutez l'ordre 66.", "Foncez sur la cible !", "Sacrifiez vous !", "Paix et prospérité.", "Formation d'attaque !", "Formation de défense !", "Méfiez vous.", "Vous n'êtes pas prêt.",  "Vers l'infini et au delà !", "Interceptez la menace !", "Ne faites rien.", "Cette phrase est fausse.", "Interdiction formelle de faire ça.", "Nettoyez le vaisseau.", "Annulez l'ordre précédent."};
+
+    // Use this for initialization
+    void Start ()
     {
-        cannisterList = new List<Cannister>();
+        visibleCannisterList = new List<Cannister>();
+        for (int i = 0; i < 15; ++i)
+        {
+            AddCannister(new AlertAnswer(randomMessages[i], SITUATION_ENDING.EXPLOSION, new AlertResponseToAnswer()));
+        }
 	}
 	
 	// Update is called once per frame
@@ -44,26 +52,28 @@ public class CannisterQueue : MonoBehaviour {
             AddCannister(Alert.possibleAlertSituations[0].answers[0] );
         }
 
-        int canNum = cannisterList.Count;
+        int canNum = visibleCannisterList.Count;
 
         for( int i = 0; i<canNum; i++)
         {
-            Cannister can = cannisterList[i];
+            Cannister can = visibleCannisterList[i];
             if(can.ejected)
             {
                 for( int j = canNum-1; j>i; j--)
                 {
-                    cannisterList[j].GoDown(animOffset);
+                    visibleCannisterList[j].GoDown(animOffset);
                 }
 
                 cannon.FireCannon(can.message);
 
-                cannisterList.Remove(can);
+                visibleCannisterList.Remove(can);
+                AddCannister(new AlertAnswer(can.message.text, SITUATION_ENDING.EXPLOSION, new AlertResponseToAnswer()));
                 break;
             }
             else if( can.outOfRange )
             {
-                cannisterList.Remove(can);
+                visibleCannisterList.Remove(can);
+                AddCannister(new AlertAnswer(can.message.text, SITUATION_ENDING.EXPLOSION, new AlertResponseToAnswer()));
                 can.Kill();
                 break;
             }
