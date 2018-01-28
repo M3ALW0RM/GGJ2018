@@ -280,7 +280,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114676929181310834}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114487122988158742}
+        m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114487122988158742
@@ -294,6 +305,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8649432e3a8fbd147a58d8e0898992e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0.01
+  pressed: 0
+  number: 0
 --- !u!114 &114559313962335864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -334,7 +348,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1503083375041132}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
