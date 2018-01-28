@@ -57,7 +57,7 @@ public class CannonBehavior : MonoBehaviour {
 	
     public void FireCannon(AlertAnswer answer)
     {
-        GameObject message = Instantiate(messagePrefab, transform.position, Quaternion.LookRotation(transform.forward));
+        GameObject message = Instantiate(messagePrefab, transform.position + -transform.right * 2f, Quaternion.LookRotation(transform.forward));
         message.GetComponent<MessageBehaviour>().answer = answer;
     }
 
