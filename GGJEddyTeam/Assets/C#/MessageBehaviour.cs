@@ -20,6 +20,6 @@ public class MessageBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        transform.Translate(transform.forward * speed * Time.deltaTime);
+        transform.Translate(Vector3.up * speed * Time.deltaTime);
 	}
 }
