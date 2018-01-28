@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d5c1eb7dfa4c4f340bc7f1d54a246ad3
-timeCreated: 1517094930
+timeCreated: 1517157040
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,6 +8,10 @@ TextureImporter:
     21300002: D_Rocket_1
     21300004: D_Rocket_2
     21300006: D_Rocket_3
+    21300008: D_Rocket_4
+    21300010: D_Rocket_5
+    21300012: D_Rocket_6
+    21300014: D_Rocket_7
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -82,57 +86,99 @@ TextureImporter:
       name: D_Rocket_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 108
+        y: 598
+        width: 296
+        height: 322
+      alignment: 9
+      pivot: {x: 0.5052656, y: 0.50830156}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: D_Rocket_1
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -136, y: 7}
+        - {x: -148, y: -37}
+        - {x: -148, y: -56}
+        - {x: -132, y: -55}
+        - {x: -114, y: -144}
+        - {x: -19.070007, y: -148.11719}
+        - {x: 58.144592, y: -93.56616}
+        - {x: 148, y: 92}
+        - {x: 148, y: 161}
+        - {x: 100, y: 161}
+        - {x: -39, y: 114}
       tessellationDetail: 0
     - serializedVersion: 2
       name: D_Rocket_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 620
+        y: 615
+        width: 298
+        height: 305
+      alignment: 9
+      pivot: {x: 0.4971002, y: 0.47924364}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 147, y: 152.5}
+        - {x: 72, y: 152.5}
+        - {x: -50, y: 122.5}
+        - {x: -149, y: -14.5}
+        - {x: -149, y: -130.5}
+        - {x: -111, y: -134.5}
+        - {x: -64, y: -106.5}
+        - {x: -60, y: -144.5}
+        - {x: -50, y: -152.5}
+        - {x: -44, y: -152.5}
+        - {x: -25, y: -145.5}
+        - {x: 11, y: -129.5}
+        - {x: 141, y: 73.5}
+        - {x: 147, y: 93.5}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: D_Rocket_3
+      name: D_Rocket_4
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 512
-        height: 512
+        x: 108
+        y: 90
+        width: 296
+        height: 318
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 85, y: 159}
+        - {x: -145, y: 11}
+        - {x: -148, y: 3}
+        - {x: -148, y: -149}
+        - {x: -144, y: -159}
+        - {x: -46, y: -159}
+        - {x: 20, y: -130}
+        - {x: 148, y: 93}
+        - {x: 148, y: 159}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: D_Rocket_6
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 102
+        width: 296
+        height: 306
+      alignment: 9
+      pivot: {x: 0.50526553, y: 0.47453272}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 148, y: 153}
+        - {x: 102, y: 153}
+        - {x: -144.88281, y: 0.7381897}
+        - {x: -148, y: -153}
+        - {x: -7.0821533, y: -148.3242}
+        - {x: 141, y: 75}
+        - {x: 147, y: 90}
+        - {x: 148, y: 130}
       tessellationDetail: 0
     outline: []
     physicsShape: []
