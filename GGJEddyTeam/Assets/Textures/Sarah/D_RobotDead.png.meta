@@ -1,13 +1,12 @@
 fileFormatVersion: 2
-guid: d5f1c26a41e62ec4ca05889238be47a8
-timeCreated: 1517157073
+guid: ac248161d28ce1f43b3d65785b94e148
+timeCreated: 1517157476
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: D_RocketGreen_0
-    21300002: D_RocketGreen_1
-    21300004: D_RocketGreen_2
-    21300006: D_RocketGreen_3
+    21300000: PSD_RobotDead_0
+    21300002: PSD_RobotDead_1
+    21300004: PSD_RobotDead_2
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -35,7 +34,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
     wrapU: 1
     wrapV: -1
@@ -79,102 +78,46 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: D_RocketGreen_0
+      name: PSD_RobotDead_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 512
-        width: 512
-        height: 512
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: 60, y: 154}
-        - {x: -148, y: 19}
-        - {x: -148, y: -63}
-        - {x: -131, y: -66}
-        - {x: -121, y: -117}
-        - {x: -109, y: -130}
-        - {x: -82, y: -111}
-        - {x: -55, y: -153}
-        - {x: -31, y: -153}
-        - {x: 21, y: -140}
-        - {x: 148, y: 66}
-        - {x: 148, y: 154}
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: D_RocketGreen_1
+      name: PSD_RobotDead_1
       rect:
         serializedVersion: 2
-        x: 512
-        y: 512
-        width: 512
-        height: 512
+        x: 1024
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: 59, y: 154}
-        - {x: -148, y: 31}
-        - {x: -148, y: -93}
-        - {x: -137, y: -153}
-        - {x: -4, y: -153}
-        - {x: 25, y: -145}
-        - {x: 148, y: 65}
-        - {x: 148, y: 154}
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: D_RocketGreen_2
+      name: PSD_RobotDead_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 1024
+        height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: 60, y: 154}
-        - {x: -148, y: 19}
-        - {x: -148, y: -63}
-        - {x: -131, y: -66}
-        - {x: -132, y: -123}
-        - {x: -129, y: -125}
-        - {x: -125, y: -124}
-        - {x: -141, y: -160}
-        - {x: -143, y: -165}
-        - {x: -143, y: -167}
-        - {x: -16, y: -167}
-        - {x: 84, y: -104}
-        - {x: 148, y: 83}
-        - {x: 148, y: 154}
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: D_RocketGreen_3
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape:
-      - - {x: 59, y: 154}
-        - {x: -148, y: 31}
-        - {x: -148, y: -93}
-        - {x: -137, y: -153}
-        - {x: -4, y: -153}
-        - {x: 25, y: -145}
-        - {x: 148, y: 65}
-        - {x: 148, y: 154}
+      physicsShape: []
       tessellationDetail: 0
     outline: []
     physicsShape: []
