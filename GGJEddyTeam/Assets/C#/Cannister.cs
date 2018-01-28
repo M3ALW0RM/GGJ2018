@@ -39,7 +39,19 @@ public class Cannister : MonoBehaviour {
 
     public void GoDown(float animOffset)
     {
-        slidePos += animOffset;
+        //slidePos += animOffset;
+        StartCoroutine(Interpolate(slidePos, slidePos+animOffset, 10f));
+    }
+
+    IEnumerator Interpolate(float start, float end, float speed)
+    {
+        float t = 0;
+        while (t*t*speed<=1)
+        {
+            slidePos = Mathf.Lerp(start, end, t*t*speed);
+            t += Time.deltaTime;
+            yield return null; //etc.
+        }
     }
 
     public void Kill()
