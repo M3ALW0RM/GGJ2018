@@ -19,6 +19,7 @@ ModelImporter:
     100022: Speaker_Band001
     100024: SpeakerCover
     100026: Object001
+    100028: ScreenFilet
     400000: BandBox
     400002: Beam01
     400004: Beam02
@@ -33,6 +34,7 @@ ModelImporter:
     400022: Speaker_Band001
     400024: SpeakerCover
     400026: Object001
+    400028: ScreenFilet
     2300000: BandBox
     2300002: Beam01
     2300004: Beam02
@@ -46,6 +48,7 @@ ModelImporter:
     2300020: Speaker_Band001
     2300022: SpeakerCover
     2300024: Object001
+    2300026: ScreenFilet
     3300000: BandBox
     3300002: Beam01
     3300004: Beam02
@@ -59,6 +62,7 @@ ModelImporter:
     3300020: Speaker_Band001
     3300022: SpeakerCover
     3300024: Object001
+    3300026: ScreenFilet
     4300000: Screen
     4300002: ScreenCap
     4300004: PanelBack
@@ -72,6 +76,7 @@ ModelImporter:
     4300020: Speaker_Band001
     4300022: BandBox
     4300024: Object001
+    4300026: ScreenFilet
   materials:
     importMaterials: 1
     materialName: 0
